@@ -11,3 +11,15 @@ let checkWeakAscent weakList =
         | x :: [] -> current <= x
         | x1 :: xs -> (current <= x1) && checkWeakAscent' xs x1
     checkWeakAscent' weakList Int32.MinValue
+
+// Function: Count
+let rec count weakList item =
+    match weakList with
+    | [] -> 0
+    | x :: [] ->
+        if x = item then 1
+        else 0
+    | x :: xs ->
+        (if x = item then 1
+         else 0)
+        + count xs item
