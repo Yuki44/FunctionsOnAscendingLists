@@ -33,3 +33,14 @@ let rec insert weakList item =
     | x :: xs when item <= x -> item :: [ x ] @ xs
     | x :: xs when item > x -> x :: (insert xs item)
     | _ -> failwith "Incomplete match on %A" weakList
+
+
+
+
+// Function: Plus
+let plus (list1, list2) =
+    let rec plus' list resultlist =
+        match list with
+        | [] -> resultlist
+        | x :: xs -> insert resultlist x |> plus' xs
+    plus' list2 list1
