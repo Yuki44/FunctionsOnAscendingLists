@@ -44,3 +44,19 @@ let plus (list1, list2) =
         | [] -> resultlist
         | x :: xs -> insert resultlist x |> plus' xs
     plus' list2 list1
+
+// Function: Minus
+let minus (minuendList, subtrahendList) =
+    let rec removeItem list itemToRemove resultList =
+        match list with
+        | [] -> resultList
+        | x :: [] when x = itemToRemove -> resultList
+        | x :: xs when x = itemToRemove -> resultList @ xs
+        | x :: xs -> resultList @ [ x ] @ removeItem xs itemToRemove resultList
+
+    let rec removeList listToRemove resultlist =
+        match listToRemove with
+        | [] -> resultlist
+        | x :: xs -> removeList xs (removeItem resultlist x [])
+
+    removeList subtrahendList minuendList
