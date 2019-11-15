@@ -23,3 +23,13 @@ let rec count weakList item =
         (if x = item then 1
          else 0)
         + count xs item
+
+// Function: Insert
+let rec insert weakList item =
+    match weakList with
+    | [] -> [ item ]
+    | x :: [] when item <= x -> [ item ] @ [ x ]
+    | x :: [] when item > x -> [ x ] @ [ item ]
+    | x :: xs when item <= x -> item :: [ x ] @ xs
+    | x :: xs when item > x -> x :: (insert xs item)
+    | _ -> failwith "Incomplete match on %A" weakList
