@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FunctionsOnAscendingLists", "FunctionsOnAscendingLists.fsproj", "{A7FD85DD-35B4-49A8-8A9E-1EC46DA8AD0C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7FD85DD-35B4-49A8-8A9E-1EC46DA8AD0C}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{A7FD85DD-35B4-49A8-8A9E-1EC46DA8AD0C}.Debug|anycpu.Build.0 = Debug|anycpu
+		{A7FD85DD-35B4-49A8-8A9E-1EC46DA8AD0C}.Release|anycpu.ActiveCfg = Release|anycpu
+		{A7FD85DD-35B4-49A8-8A9E-1EC46DA8AD0C}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
