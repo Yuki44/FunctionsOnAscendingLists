@@ -1,16 +1,9 @@
 ﻿// Learn more about F# at http://fsharp.org
 // See the 'F# Tutorial' project for more help.
 open System
+open System.Linq
 
 
-// Check if the list is weakly ascending:
-let checkWeakAscent weakList =
-    let rec checkWeakAscent' weakList current =
-        match weakList with
-        | [] -> true
-        | x :: [] -> current <= x
-        | x1 :: xs -> (current <= x1) && checkWeakAscent' xs x1
-    checkWeakAscent' weakList Int32.MinValue
 
 // Function: Count
 let rec count weakList item =
@@ -32,9 +25,11 @@ let rec insert weakList item =
     | x :: [] when item > x -> [ x ] @ [ item ]
     | x :: xs when item <= x -> item :: [ x ] @ xs
     | x :: xs when item > x -> x :: (insert xs item)
-    | _ -> failwith "Incomplete match on %A" weakList
+    | _ -> failwith "Incomplete match on %A"
 
 
+// Function: Intersect
+let intersect list1 list2 = List.filter (fun elm -> List.contains elm list1) list2
 
 
 // Function: Plus
