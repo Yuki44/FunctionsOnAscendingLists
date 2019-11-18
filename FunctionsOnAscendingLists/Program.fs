@@ -29,7 +29,7 @@ let rec insert weakList item =
 
 
 // Function: Intersect
-let intersect list1 list2 = List.filter (fun elm -> List.contains elm list1) list2
+let intersect (list1, list2) = List.filter (fun elm -> List.contains elm list1) list2
 
 
 // Function: Plus
